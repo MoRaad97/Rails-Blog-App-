@@ -10,7 +10,7 @@
 <ol>
 <% @posts.each do |post| %>
 <li>
-<p><%= post.title%></p>
+<p><a href="http://localhost:3000/users/<%= @user.id %>/posts/<%= post.id %>"><%= post.title%></a></p>
 <p><%= post.text%></p>
 <p>number on comments:<%= post.comment_counter || 0%></p>
 <p>number on likes:<%= post.likes_counter || 0%></p>

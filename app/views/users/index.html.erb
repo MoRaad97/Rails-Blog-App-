@@ -13,7 +13,7 @@
       <td>
         <img src="#{<%= user.photo %>}" alt="User Img" />
       </td>
-      <td><%= user.name %></td>
+      <td><a href="http://localhost:3000/users/<%= user.id %>"><%= user.name %></a></td>
       <td><%= user.posts_counter %></td>
     </tr>
     <% end %>
