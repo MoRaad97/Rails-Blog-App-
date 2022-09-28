@@ -1,1 +1,25 @@
 <h1>User Detials "Show Page"</h1>
+<div>
+<h2>User</h2>
+  <img src="#{<%= @user.photo %>}" alt="User Img" />
+  <span><%= @user.name %></span>
+  <span><%= @user.posts_counter %></span>
+</div>
+<div>
+<h2>Bio</h2>
+  <p> <%= @user.bio || "the bio is embty" %></p>
+</div>
+<div>
+<h2>Posts</h2>
+<ol>
+<% @posts.each do |post| %>
+<li>
+<p><%= post.title%></p>
+<p><%= post.text%></p>
+<p>number on comments:<%= post.comment_counter || 0%></p>
+<p>number on likes:<%= post.likes_counter || 0%></p>
+</li>
+<% end %>
+</ol>
+</div>
+
