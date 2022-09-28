@@ -1,1 +1,16 @@
 <h1>Post details Page</h1>
+
+<div>
+<p><%= @post.title%></p>
+<p><%= @post.text%></p>
+<p>number on comments:<%= @post.comment_counter || 0%></p>
+<p>number on likes:<%= @post.likes_counter || 0%></p>
+</div>
+<div>
+<ul>
+<% @comments.each do |comment| %>
+<li><span><%= comment.users_id%></span>: <%= comment.text %></li>
+<% end %>
+</ul>
+</div>
+
