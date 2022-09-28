@@ -14,12 +14,20 @@ RSpec.describe UsersController, type: :request do
       get("/")
       expect(response).to have_http_status(200)
     end
+    it 'response body should include' do
+      get('/')
+      expect(response.body).to include('<h1>List of User "Index Page"</h1>')
+    end
   end
 
   context '#show' do
     it 'render a template' do
       get("/users/4")
       expect(response).to render_template('show')
+    end
+    it 'response body should include' do
+      get('/users/4')
+      expect(response.body).to include('<h1>User Detials "Show Page"</h1>')
     end
   end
 end
