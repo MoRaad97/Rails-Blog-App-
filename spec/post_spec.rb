@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe Post, type: :model do
   subject {
-    Post.new(title: 'Tom', text: 'Post text', bio: 'Teacher from Mexico.',
+    Post.new(title: 'Tom', text: 'Post text',
              comment_counter: 0, likes_counter: 0)
   }
 
