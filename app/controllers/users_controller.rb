@@ -4,6 +4,6 @@ class UsersController < ApplicationController
   end
 
   def index
-    puts params
+    @users = User.all
   end
 end
