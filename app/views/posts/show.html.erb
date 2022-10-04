@@ -9,8 +9,16 @@
 <div>
 <ul>
 <% @comments.each do |comment| %>
-<li><span><%= comment.users_id%></span>: <%= comment.text %></li>
+<li><span><%= comment.user_id%></span>: <%= comment.text %></li>
 <% end %>
+
+<li>
+<%= form_with scope: :like, url: user_post_likes_path(@user,@post), local: true do |f|  %>
+  <p>
+  <%= f.submit "Like" %>
+  </p>
+  <% end %>
+</li>
+
 </ul>
 </div>
-
