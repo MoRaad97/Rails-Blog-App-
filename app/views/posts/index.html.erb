@@ -1,21 +1,32 @@
 <h1>Post Index Page</h1>
 <div>
-<h2>User</h2>
-  <img src="#{<%= @user.photo %>}" alt="User Img" />
+  <h2>User</h2>
+  <img src="<%= @user.photo %>" alt="User Img" />
   <span><%= @user.name %></span>
   <span><%= @user.posts_counter %></span>
 </div>
 <div>
-<h2>Posts</h2>
-<ol>
-<% @posts.each do |post| %>
-<li>
-<p><a href="http://localhost:3000/users/<%= @user.id %>/posts/<%= post.id %>"><%= post.title%></a></p>
-<p><%= post.text%></p>
-<p>number on comments:<%= post.comment_counter || 0%></p>
-<p>number on likes:<%= post.likes_counter || 0%></p>
-</li>
-<% end %>
-</ol>
+  <h2>Posts</h2>
+  <ol>
+    <% @posts.each do |post| %>
+    <li>
+      <p>
+        <a
+          href="http://localhost:3000/users/<%= @user.id %>/posts/<%= post.id %>"
+          ><%= post.title%></a
+        >
+      </p>
+      <p><%= post.text%></p>
+      <p>number on comments:<%= post.comment_counter || 0 %></p>
+      <p>number on likes:<%= post.likes_counter || 0 %></p>
+      <p><a href="<%= new_user_post_comment_path(@user,post) %>"> Add Comment </a></p>
+      <p>  <%= form_with scope: :like, url: user_post_likes_path(@user,post), local: true do |f|  %>
+        <p>
+        <%= f.submit%>
+        </p>
+        <% end %></p>
+    </li>
+    <% end %>
+  </ol>
 </div>
-
+<h3><a href="http://localhost:3000/users/<%= @user.id %>/posts/new">Create Post</a></h3>
