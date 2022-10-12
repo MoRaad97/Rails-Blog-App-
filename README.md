@@ -15,6 +15,10 @@ If you wish to run the project locally, please do the following: Clone the repos
 - Twitter: [@MohammedRaadz](https://twitter.com/MohammedRaadz)
 - LinkedIn: [Mohammed Raad](linkedin.com/in/mohammed-raad-600176210)
 
+👤 **Alphonce Mobutu**
+
+- GitHub: [@githubhandle](https://github.com/tingamapuro04)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
