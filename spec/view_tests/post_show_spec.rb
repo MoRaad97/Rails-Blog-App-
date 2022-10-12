@@ -9,13 +9,13 @@ RSpec.describe 'user_show', type: :feature do
       bio: 'Programmer from Iraq.',
       posts_counter: 0
     )
-    @post  = Post.new(title: 'Post1', text: 'Post 1 text', comment_counter: 0, likes_counter: 0)
+    @post = Post.new(title: 'Post1', text: 'Post 1 text', comment_counter: 0, likes_counter: 0)
     @post.user_id = @user.id
     @post.save!
-    
+
     @comment = Comment.new(text: 'my comment')
     @comment.user = @user
-    @comment.post = @post    
+    @comment.post = @post
     @comment.save!
     visit(user_post_path(@user.id, @post.id))
   end
@@ -27,7 +27,7 @@ RSpec.describe 'user_show', type: :feature do
   it 'shows the text of the post' do
     expect(page).to have_content("#{@post.text}")
   end
-  
+
   it 'can see who wrote the post' do
     expect(page).to have_content("#{@post.user.name}")
   end
@@ -47,9 +47,8 @@ RSpec.describe 'user_show', type: :feature do
   it 'show the username of the commenter' do
     expect(page).to have_content("#{@comment.user.name}")
   end
-  
+
   it 'show the comment text of the commenter' do
     expect(page).to have_content("#{@comment.text}")
   end
-
 end

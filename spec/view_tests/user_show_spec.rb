@@ -12,15 +12,15 @@ RSpec.describe 'user_show', type: :feature do
       bio: 'Programmer from Iraq.',
       posts_counter: 0
     )
-    @post1  = Post.new(title: 'Post1', text: 'Post 1 text', comment_counter: 0, likes_counter: 0)
+    @post1 = Post.new(title: 'Post1', text: 'Post 1 text', comment_counter: 0, likes_counter: 0)
     @post1.user_id = @user.id
     @post1.save!
-    
-    @post2  = Post.new(title: 'Post2', text: 'Post 2 text', comment_counter: 0, likes_counter: 0)
+
+    @post2 = Post.new(title: 'Post2', text: 'Post 2 text', comment_counter: 0, likes_counter: 0)
     @post2.user_id = @user.id
     @post2.save!
-    
-    @post3  = Post.new(title: 'Post3', text: 'Post 3 text', comment_counter: 0, likes_counter: 0)
+
+    @post3 = Post.new(title: 'Post3', text: 'Post 3 text', comment_counter: 0, likes_counter: 0)
     @post3.user_id = @user.id
     @post3.save!
     visit(user_path(@user.id))
@@ -62,5 +62,4 @@ RSpec.describe 'user_show', type: :feature do
     click_link("#{post.title}")
     expect(page.current_path).to eql(user_post_path(user.id, post.id))
   end
-
 end

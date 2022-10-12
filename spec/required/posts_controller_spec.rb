@@ -19,7 +19,7 @@
 #         expect(response.body).to include('<h1>Post Index Page</h1>')
 #       end
 #     end
-    
+
 #     context '#show' do
 #       it 'render a template' do
 #         get('/users/4/posts/15')

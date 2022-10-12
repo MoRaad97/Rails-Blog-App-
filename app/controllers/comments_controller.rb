@@ -1,4 +1,4 @@
-class CommentsController < ApplicationController 
+class CommentsController < ApplicationController
   def new
   end
 
@@ -11,4 +11,3 @@ class CommentsController < ApplicationController
     redirect_to "/users/#{current_user.id}/posts/#{@post.id}"
   end
 end
-
