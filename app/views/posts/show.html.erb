@@ -1,6 +1,7 @@
 <h1>Post details Page</h1>
 
 <div>
+<p><%= @post.user.name%></p>
 <p><%= @post.title%></p>
 <p><%= @post.text%></p>
 <p>number on comments:<%= @post.comment_counter || 0%></p>
@@ -9,7 +10,7 @@
 <div>
 <ul>
 <% @comments.each do |comment| %>
-<li><span><%= comment.user_id%></span>: <%= comment.text %></li>
+<li><span><%= comment.user.name%></span>: <%= comment.text %></li>
 <% end %>
 
 <li>

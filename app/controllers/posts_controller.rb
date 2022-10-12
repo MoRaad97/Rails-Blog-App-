@@ -11,7 +11,6 @@ class PostsController < ApplicationController
   end
 
   def new
-    
   end
 
   def create
@@ -19,6 +18,6 @@ class PostsController < ApplicationController
     @post.comment_counter = 0
     @post.likes_counter = 0
     current_user.posts << @post
-    redirect_to user_post_path(current_user,@post)
+    redirect_to user_post_path(current_user, @post)
   end
 end

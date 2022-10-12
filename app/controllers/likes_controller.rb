@@ -1,4 +1,4 @@
-class LikesController < ApplicationController 
+class LikesController < ApplicationController
   def create
     @like = Like.new()
     @post = Post.find(params[:post_id])
@@ -8,4 +8,3 @@ class LikesController < ApplicationController
     redirect_to "/users/#{current_user.id}/posts"
   end
 end
-
