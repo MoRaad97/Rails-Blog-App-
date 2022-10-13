@@ -1,4 +1,14 @@
 <h1>List of User "Index Page"</h1>
+<ul>
+<li>
+<%= link_to "Sign In", new_user_session_path %>
+</li>
+<li><%= link_to "Sign Up", new_user_registration_path %>
+</li>
+<li>
+<%= link_to "Sign Out", destroy_user_session_path %>
+</li>
+</ul>
 <table style="width: 100%">
   <thead>
     <tr>
@@ -14,7 +24,7 @@
         <img src="#{<%= user.photo %>}" alt="User Img" />
       </td>
       <td><a href="http://localhost:3000/users/<%= user.id %>"><%= user.name %></a></td>
-      <td><%= user.posts_counter %></td>
+      <td><%= user.posts_counter || 0 %></td>
     </tr>
     <% end %>
   </tbody>

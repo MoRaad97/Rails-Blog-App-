@@ -3,7 +3,7 @@
 <h2>User</h2>
   <img src="#{<%= @user.photo %>}" alt="User Img" />
   <span><%= @user.name %></span>
-  <span><%= @user.posts_counter %></span>
+  <span><%= @user.posts_counter || 0 %></span>
 </div>
 <div>
 <h2>Bio</h2>
